@@ -1,0 +1,46 @@
+@mixin headerStyle {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  align-items: center;
+  justify-content: center;
+}
+.header-block {
+  @include headerStyle();
+  padding: 2vw 0;
+  &__inner-wrap {
+    @include headerStyle();
+  }
+  &__text {
+    padding: 0.5vw 0;
+  }
+}
+.header-block a {
+  --c: linear-gradient(#000 0 0); /* update the color here */
+  color: #000;
+  padding: 0.5vw 0;
+  padding-bottom: 0.15em;
+  background: var(--c), var(--c);
+  background-size: 0.3em 0.1em;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  font-size: 1.2vw;
+  transition: 0.3s linear, background-size 0.3s 0.2s linear;
+}
+.header-block a:hover {
+  padding: 0 0 0.2vw 0;
+
+  background-size: 100% 0.1em;
+  background-position: 10% 100%, 100% 100%;
+}
+
+.img-block {
+  &__img {
+    width: 100px;
+  }
+}
+// @media screen and(max-width:537px) {
+//   .header-block{
+//     gap: 2vw;
+//   }
+// }
